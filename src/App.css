@@ -1,0 +1,265 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+body {
+  background-color: #111;
+}
+.main-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 7vh;
+  height: 100dvh;
+  width: 100vw;
+}
+.main-game {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  position: relative;
+}
+.switch {
+  height: 4vh;
+  aspect-ratio: 1/1;
+  position: absolute;
+  border-radius: 100%;
+  border: 1px solid white;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  transition: 200ms ease-in-out;
+
+  top: 1rem;
+  right: 25%;
+}
+.switch > span {
+  font-size: 2rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  /* margin-top: -0.5rem; */
+}
+.switch:hover {
+  cursor: pointer;
+  background-color: #fff;
+  color: #000;
+}
+
+.game-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 1rem;
+}
+
+.word-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+.shake {
+  animation: shake 500ms linear;
+}
+.word {
+  font-size: 2.2rem;
+  color: #fff;
+  font-weight: 700;
+  text-transform: uppercase;
+  background-color: #323232;
+  height: 6vh;
+  aspect-ratio: 1/1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  transition: 500ms ease-in-out;
+  transition-delay: 500ms;
+}
+.present {
+  background-color: #b59f3b;
+}
+
+.keyboard {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  width: 80vw;
+  touch-action: manipulation;
+}
+
+.key {
+  height: 6vh;
+  aspect-ratio: 1/1.3;
+  background-color: #818384;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  font-size: 1.5rem;
+  color: #fff;
+  font-weight: 600;
+}
+
+.enterkey {
+  aspect-ratio: 1/0.7;
+}
+.used {
+  background-color: #3a3a3c;
+}
+.correct {
+  background-color: #538d4e;
+}
+.error-message {
+  color: #000000;
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  text-align: center;
+  background-color: #fff;
+  padding: 0.5rem;
+  border-radius: 10px;
+  position: absolute;
+  top: 6vh;
+  left: 50%;
+  translate: -50% -50%;
+  opacity: 0;
+  transition: 200ms ease-in-out;
+}
+.status-visible {
+  opacity: 1;
+  top: 5vh;
+}
+
+.gameend {
+  height: 80vh;
+  aspect-ratio: 1/0.7;
+  max-width: 80vw;
+  background-color: #ffffff;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5rem;
+
+  border-radius: 10px;
+}
+
+.game-result {
+  font-size: 2rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #000000;
+  margin-bottom: 1rem;
+}
+
+.word-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 1rem;
+}
+
+.game-word-present {
+  color: #000000;
+  margin-bottom: 1rem;
+}
+
+.game-word {
+  font-size: 2rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #000000;
+}
+
+.restart-button {
+  height: 5vh;
+  aspect-ratio: 1/0.3;
+  background-color: #000000;
+  color: #ffffff;
+  font-size: 1.2rem;
+  font-weight: 700;
+  border-radius: 10px;
+  padding: 0.5rem;
+  cursor: pointer;
+  transition: 200ms ease-in-out;
+}
+.restart-button:hover {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+@keyframes shake {
+  0% {
+    translate: 0 0;
+  }
+  25% {
+    translate: -5px 0;
+  }
+  50% {
+    translate: 0 0;
+  }
+  75% {
+    translate: 5px 0;
+  }
+  100% {
+    translate: 0 0;
+  }
+}
+
+.boop {
+  animation: boop 200ms linear;
+}
+
+@keyframes boop {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.reveal > div {
+  animation: reveal 1000ms linear;
+}
+
+@keyframes reveal {
+  0% {
+    transform: rotateX(0deg);
+  }
+  50% {
+    transform: rotateX(90deg);
+  }
+  100% {
+    transform: rotateX(0deg);
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .switch {
+    right: 4%;
+  }
+}
