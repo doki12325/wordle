@@ -18,11 +18,6 @@ function App() {
     return false;
   };
   const [mainword, setMainword] = useState(generateWord());
-  const [gamestatus, setGamestatus] = useState({
-    status: true,
-    word: mainword,
-    win: false,
-  });
   const [words, setWords] = useState({
     word: [" ", " ", " ", " ", " "],
     wordindex: 0,
@@ -172,7 +167,6 @@ function App() {
                       key={index}
                       id={`${rowindex}${index}`}
                       className="word"
-                      // style={{ animationDelay: `${index * 0.1}s` }}
                     >
                       {data}
                     </div>
